@@ -5,13 +5,13 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
-    "start": "node ./dist/index.js",
+    "start": "node ./dist/server.js",
     "prepare": "husky",
     "test": "echo 'test executed'",
   
-    "dev":"nodemon ./src/index.ts",
+    "dev":"nodemon ./src/server.ts",
     "dist": "npx tsc"
   },
   "devDependencies": {
