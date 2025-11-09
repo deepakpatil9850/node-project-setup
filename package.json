@@ -10,19 +10,17 @@
     "start": "node ./dist/server.js",
     "prepare": "husky",
     "test": "echo 'test executed'",
-  
-    "dev":"nodemon ./src/server.ts",
+    "dev": "nodemon ./src/server.ts",
     "dist": "npx tsc"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@types/node": "^24.10.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
-  },
-  "dependencies": {
-   
   }
 }

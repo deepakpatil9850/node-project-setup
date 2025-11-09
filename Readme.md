@@ -36,9 +36,9 @@
         "dev":"nodemon ./src/index.ts",
         "dist": "npx tsc"
   }
-- ## Git and Github
-    1.
-    2.
-    3.
+- ## Commit lint
+    1.   npm i @commitlint/cli @commitlint/config-conventional -D 
+    2.  echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+    3.  echo "npx --no -- commitlint --edit `$1" > .husky/commit-msg
     4.
     5.
