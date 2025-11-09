@@ -42,3 +42,33 @@
     3.  echo "npx --no -- commitlint --edit `$1" > .husky/commit-msg
     4.
     5.
+
+- ## ESlint- tslint
+    1.  ``npm install --save-dev eslint @eslint/js typescript typescript-eslint``
+    2.  Create `eslint.config.mjs` at root of project then add 
+        ```
+      //@ts-check
+
+        import eslint from "@eslint/js";
+        import tseslint from "typescript-eslint";
+
+        export default tseslint.config({
+        ignores: ["**/build/**", "**/dist/**"],
+            languageOptions: {
+                parserOptions: {
+                 project: "./tsconfig.json",
+                tsconfigRootDir: import.meta.dirname,
+        },
+        },
+        files: ["**/*.ts"],
+        rules: {
+        "no-console": "error",
+        quotes: ["error", "single", {allowTemplateLiterals: true}],
+        },
+        extends: [eslint.configs.recommended, ...tseslint.configs.recommended],
+        });
+
+        ```
+    3.  
+    4.
+    5.
