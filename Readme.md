@@ -13,8 +13,12 @@
 
 - ## Git and Github
     1. install git and open gitbash type - `git init` ,  `git add .` ,  `git commit -m "Feat: node setup"`
-    2. Goto github, create folder, type on gitbash - `git remote add origin https://github.com/deepakpatilxxxx.git`, `git branch -M main`, `git push origin main`
-    3. create `.gitignore` file and add node_modules in it
+    2. Goto github, create folder, type on gitbash - `git remote add origin https://xxxx.git`, `git branch -M main`, `git push origin main`
+    3. create `.gitignore` file and add 
+    ```
+    node_modules
+    dist
+    ```
    
 - ## Husky
     1. `npm i husky lint-staged -D`  then type => `npx husky init`
@@ -22,12 +26,16 @@
   
 
 - ## TypeScript
-    1.
-    2.
-    3.
-    4.
-    5.
-
+    1. npm i typescript -D
+    2. npx tsc --init
+    3. npm install  @types/node nodemon ts-node -D
+    4. modify `package.json`
+    ```
+    "scripts": {
+        "start": "node ./dist/index.js",
+        "dev":"nodemon ./src/index.ts",
+        "dist": "npx tsc"
+  }
 - ## Git and Github
     1.
     2.
