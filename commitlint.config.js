@@ -1,25 +1,9 @@
 const configuration = {
-  extends: ["@commitlint/cli", "@commitlint/config-conventional"],
-  rules: {
-    "type-enum": [
-      2,
-      "always",
-      [
-        "build",
-        "chore",
-        "ci",
-        "docs",
-        "feat",
-        "fix",
-        "perf",
-        "refactor",
-        "revert",
-        "style",
-        "test",
-      ],
-    ],
-    "subject-case": [2, "always", "sentence-case"],
-  },
-};
+    extends: ['@commitlint/cli', '@commitlint/config-conventional'],
+    rules: {
+        'type-enum': [2, 'always', ['build', 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test']],
+        'subject-case': [2, 'always', 'sentence-case']
+    }
+}
 
-module.exports = configuration;
+module.exports = configuration
