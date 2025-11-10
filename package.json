@@ -12,12 +12,15 @@
     "dev": "nodemon ./src/server.ts",
     "lint": "npx eslint",
     "lint:fix": "npx eslint --fix",
+    "format:check":"npx prettier . --check",
+    "format:fix":"npx prettier . --fix",
     "prepare": "husky",
     "dist": "npx tsc"
   },
   "lint-staged": {
     "*.ts": [
-      "npm run lint:fix"
+      "npm run lint:fix",
+      "npm run format:fix"
     ]
   },
   "devDependencies": {
@@ -26,10 +29,12 @@
     "@eslint/js": "^9.39.1",
     "@types/node": "^24.10.0",
     "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "nodemon": "^3.1.10",
+    "prettier": "3.6.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.3"

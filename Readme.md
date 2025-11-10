@@ -39,14 +39,20 @@
 - ## Commit lint
     1.   npm i @commitlint/cli @commitlint/config-conventional -D 
     2.  echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
-    3.  echo "npx --no -- commitlint --edit `$1" > .husky/commit-msg
-    4.
+    3.  echo "npx --no -- commitlint --edit $1" > .husky/commit-msg
+    4. `commit-msg `
+    ```
+    #!/usr/bin/env sh
+    . "$(dirname -- "$0")/_/husky.sh"
+
+    npx --no -- commitlint --edit $1
+    ```
     5.
 
 - ## ESlint- tslint
     1.  ``npm install --save-dev eslint @eslint/js typescript typescript-eslint``
     2.  Create `eslint.config.mjs` at root of project then add 
-        ```
+  ```
       //@ts-check
 
         import eslint from "@eslint/js";
@@ -67,8 +73,29 @@
         },
         extends: [eslint.configs.recommended, ...tseslint.configs.recommended],
         });
+    ```
+    3. package.json => scripts ->  "lint":"npx eslint" and "lint:fix" : "npx eslint --fix"
+    4.  `package.json`
+    ``` 
+        "lint-staged": {
+            "*.ts": ["npm run lint:fix"]
+        },
+    ```
+    5. .husky => `pre-commit`
+    ```
+    #!/usr/bin/env sh
+    . "$(dirname -- "$0")/_/husky.sh"
 
-        ```
-    3.  
-    4.
-    5.
+    npx lint-staged
+
+
+- ## Prettier
+    1. 
+    2. 
+
+- ## Prettier
+    1. 
+    2. 
+- ## Prettier
+    1. 
+    2. 
